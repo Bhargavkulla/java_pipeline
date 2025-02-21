@@ -28,7 +28,7 @@ pipeline {
 
 stage('Deploy to Tomcat') {
     steps {
-        sh 'scp target/*.war tomcat@localhost:/opt/tomcat9/webapps/'
+        sh 'scp target/*.war tomcat@localhost:/opt/tomcat/webapps/'
         sh 'ssh tomcat@localhost "sudo -S systemctl restart tomcat"'
     }
 }
